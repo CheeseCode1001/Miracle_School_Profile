@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="assets/gray-icon.png" type="image/x-icon">
+    <title>Miracle Eze | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="brand">Miracle Eze</div>
+        <!-- nav and controls -->
+        <div class="nav-controls">
+            <nav class="site-nav">
+                <a href="index.html" class="active">Home</a>
+                <a href="work.html">Work</a>
+                <a href="about.html">About</a>
+                <a href="planner.html">Planner</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="header-controls">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i data-lucide="sun"></i>
+                </button>
+                <button class="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+   <div class="mobile-menu">
+        <a href="index.html"><span>Home</span> <i data-lucide="arrow-up-right"></i></a>
+        <a href="work.html" class="active"><span>Work</span> <i data-lucide="arrow-up-right"></i></a>
+        <a href="about.html"><span>About</span> <i data-lucide="arrow-up-right"></i></a>
+        <a href="planner.html"><span>Planner</span> <i data-lucide="arrow-up-right"></i></a>
+        <a href="contact.html"><span>Contact</span> <i data-lucide="arrow-up-right"></i></a>
+    </div>
+
+
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-header-top page-shell">
+                <div class="hero-copy">
+                    <h1 class="stagger-text ">Fueled by caffeine. Powered by panic.</h1>
+                </div>
+                <div class="scroll-hint">↓ Scroll before my code breaks</div>
+            </div>
+            <!-- Using an online placeholder for the student photo to match the design -->
+            <div class="hero-image"
+                style="background-image: url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=2070&auto=format&fit=crop')">
+            </div>
+        </section>
+
+        <section class="work-section">
+            <div class="section-heading page-shell">
+                <h2 class="stagger-text">Who am I?</h2>
+                <p>I'm Miracle Eze, aSoftware Engineering Student currently balancing deadlines, unreadable console
+                    errors, and an
+                    unhealthy amount of coffee. Welcome to my little corner of the web where I pretend to know
+                    exactly what I'm doing.</p>
+                <a href="about.html" class="view-all">Stalk my life</a>
+            </div>
+        </section>
+
+        <section class="work-section" id="work">
+            <div class="section-heading page-shell">
+                <h2 class="stagger-text">Things I've Built</h2>
+                <p> I'm guessing your wondering why there is no link to the live preview, Well your not alone, so lets
+                    just keep our fingers crossed.</p>
+                <a href="work.html" class="view-all">Just View</a>
+            </div>
+
+            <div class="work-grid page-shell">
+                <a href="work.html" class="work-card">
+                    <div class="work-media"
+                        style="background-image: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800&auto=format&fit=crop');">
+                    </div>
+                    <div class="work-copy">
+                        <span>01 / E-Commerce Platform</span>
+                        <p>An online store that taught me why developers cry over payment gateways.</p>
+                    </div>
+                </a>
+                <a href="work.html" class="work-card">
+                    <div class="work-media"
+                        style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop');">
+                    </div>
+                    <div class="work-copy">
+                        <span>02 / Task Manager</span>
+                        <p>An app to manage tasks. Ironically, I procrastinated building it.</p>
+                    </div>
+                </a>
+                <a href="work.html" class="work-card">
+                    <div class="work-media"
+                        style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop');">
+                    </div>
+                    <div class="work-copy">
+                        <span>03 / Student Portal</span>
+                        <p>A dashboard for tracking grades so I can obsess over my GPA in real-time.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="faq-section" style="margin-bottom: 8rem; margin-top: 8rem;">
+            <div class="section-heading page-shell">
+                <h2 class="stagger-text">Frequently Asked Questions</h2>
+                <p>Things people ask me at parties (if I went to parties).</p>
+            </div>
+            <div class="faq-grid"
+                style="width: 100%; display: grid; grid-template-columns: 1fr; gap: 2rem; margin-top: 2rem;">
+                <div style="width: 100%; border-bottom: 1px solid var(--border);  padding-bottom: 1rem;">
+                    <div class="faq-grid-inner page-shell">
+                        <div class="faq-grid-inner-text">
+                            <h2 style="font-weight: 500; margin-bottom: 0.5rem;">Can you hack my ex's Instagram?</h3>
+                            <p style="color: var(--muted);">No. And frankly, they moved on. You should too.</p>
+                        </div>
+                         <div class="faq-image"
+                style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1000&auto=format&fit=crop');">
+                    </div>
+                </div>
+                </div>
+
+                <div
+                    style="width: 100%; border-bottom: 1px solid var(--border); padding-bottom: 1rem;">
+                     <div class="faq-grid-inner page-shell">
+                        <div class="faq-grid-inner-text">
+                    <h2 style="font-weight: 500; margin-bottom: 0.5rem;">Tabs or Spaces?</h2>
+                    <p style="color: var(--muted);">Tabs. Anyone who uses spaces probably also pours milk before the
+                        cereal.</p>
+                        </div>
+                         <div class="faq-image"
+                style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1000&auto=format&fit=crop');">
+                    </div>
+                </div>
+                </div>
+                <div
+                    style="width: 100%; border-bottom: 1px solid var(--border); padding-bottom: 1rem;">
+                   <div class="faq-grid-inner page-shell">
+                        <div class="faq-grid-inner-text">
+                    <h2 style="font-weight: 500; margin-bottom: 0.5rem;">Can you fix my printer?</h2>
+                    <p style="color: var(--muted);">I study Software Engineering, not Dark Magic.</p>
+                        </div>
+                    <div class="faq-image"
+                style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1000&auto=format&fit=crop');">
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h1 class="stagger-text">
+                Ready to hire a tired but dedicated dev?
+            </h1>
+            <p style="color: var(--muted); margin-bottom: 2rem;">Whether you want to build something cool or just
+                send me Starbucks gift cards, my inbox is open.</p>
+            <a href="contact.html"
+                style="display: inline-block; padding: 1rem 3rem; background: var(--text); color: var(--bg); text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: transform 0.2s;">Contact
+                Me</a>
+        </section>
+    </main>
+
+
+    <footer class="site-footer">
+        <div class="footer-left">© 2026 Miracle Eze. All Rights Reserved.</div>
+        <div class="footer-right">Designed for COS 106 Term Project.</div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@0.2.37/dist/lenis.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

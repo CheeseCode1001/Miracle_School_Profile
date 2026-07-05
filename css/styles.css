@@ -240,7 +240,7 @@ img {
   display: flex;
   align-items: start;
   justify-content: space-between;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   border-bottom: 1px solid var(--border);
   font-weight: 500;
   color: var(--text);
@@ -251,7 +251,7 @@ img {
   text-decoration: none;
   transition: color 0.2s;
 }
-.mobile-menu a:last-child {
+.mobile-menu a:first-child {
   margin-top: 1.5rem;
 }
 
@@ -261,7 +261,7 @@ img {
 }
 
 .mobile-menu a i{
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 /* HERO */
@@ -676,7 +676,7 @@ img {
 
 .cta-section h1 {
   font-family: 'Clash Display', sans-serif;
-  font-size: 3rem;
+  font-size: 2rem;
   margin-bottom: -1rem;
 }
 

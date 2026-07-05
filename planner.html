@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="assets/gray-icon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/miracle-icon.png" type="image/x-icon">
     <title>Academic Planner | Miracle Eze</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,31 +14,31 @@
 </head>
 
 <body>
-    
+
     <header class="site-header">
         <div class="brand">Miracle Eze</div>
-         <!-- nav and controls -->
-            <div class="nav-controls">
-        <nav class="site-nav">
-            <a href="index.html">Home</a>
-            <a href="work.html">Work</a>
-            <a href="about.html">About</a>
-            <a href="planner.html" class="active">Planner</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-        <div class="header-controls">
-            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                <i data-lucide="sun"></i>
-            </button>
-            <button class="hamburger" aria-label="Menu">
-                <span></span>
-                <span></span>
-            </button>
-        </div>
+        <!-- nav and controls -->
+        <div class="nav-controls">
+            <nav class="site-nav">
+                <a href="index.html">Home</a>
+                <a href="work.html">Work</a>
+                <a href="about.html">About</a>
+                <a href="planner.html" class="active">Planner</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="header-controls">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i data-lucide="sun"></i>
+                </button>
+                <button class="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </header>
 
-   <div class="mobile-menu">
+    <div class="mobile-menu">
         <a href="index.html"><span>Home</span> <i data-lucide="arrow-up-right"></i></a>
         <a href="work.html" class="active"><span>Work</span> <i data-lucide="arrow-up-right"></i></a>
         <a href="about.html"><span>About</span> <i data-lucide="arrow-up-right"></i></a>
@@ -47,7 +47,7 @@
     </div>
 
 
-<div class="page-shell">
+    <div class="page-shell">
         <main>
             <section class="hero-section">
                 <div class="hero-header-top">
@@ -56,7 +56,8 @@
                     </div>
                 </div>
                 <div class="hero-text">
-                    Keep track of assignments, deadlines, and all the things you’re actively ignoring. Add tasks, mark them as complete, and delete them so you don't feel guilty.
+                    Keep track of assignments, deadlines, and all the things you’re actively ignoring. Add tasks, mark
+                    them as complete, and delete them so you don't feel guilty.
                 </div>
             </section>
 
@@ -66,9 +67,12 @@
                         <button id="addActivityBtn" class="btn">Add Deadline to Ignore</button>
                     </div>
 
-                    <div id="emptyState" style="display: none; width: 100%; padding: 4rem 2rem; margin-top: 2rem; border: 2px dashed var(--border); text-align: center;">
-                        <i data-lucide="coffee" style="width: 48px; height: 48px; color: var(--muted); margin-bottom: 1rem;"></i>
-                        <h3 style="font-weight: 500; font-size: 1.5rem; margin-bottom: 0.5rem;">No activities found!</h3>
+                    <div id="emptyState"
+                        style="display: none; width: 100%; padding: 4rem 2rem; margin-top: 2rem; border: 2px dashed var(--border); text-align: center;">
+                        <i data-lucide="coffee"
+                            style="width: 48px; height: 48px; color: var(--muted); margin-bottom: 1rem;"></i>
+                        <h3 style="font-weight: 500; font-size: 1.5rem; margin-bottom: 0.5rem;">No activities found!
+                        </h3>
                         <p style="color: var(--muted);">Time to relax... or panic about a deadline you forgot.</p>
                     </div>
 
@@ -90,21 +94,25 @@
                         </div>
                         <div class="form-group">
                             <label for="taskDesc">Description</label>
-                            <textarea id="taskDesc" rows="3" placeholder="Provide extra details..." style="width: 100%; padding: 1rem; border: 1px solid var(--border); background: transparent; color: var(--text);"></textarea>
+                            <textarea id="taskDesc" rows="3" placeholder="Provide extra details..."
+                                style="width: 100%; padding: 1rem; border: 1px solid var(--border); background: transparent; color: var(--text);"></textarea>
                         </div>
                         <div class="form-group" style="display: flex; gap: 1rem;">
                             <div style="width: 50%;">
                                 <label for="taskDate">Date</label>
-                                <input type="date" id="taskDate" required style="width: 100%; padding: 1rem; border: 1px solid var(--border); background: transparent; color: var(--text);">
+                                <input type="date" id="taskDate" required
+                                    style="width: 100%; padding: 1rem; border: 1px solid var(--border); background: transparent; color: var(--text);">
                             </div>
                             <div style="width: 50%;">
                                 <label for="taskTime">Time</label>
-                                <input type="time" id="taskTime" required style="width: 100%; padding: 1rem; border: 1px solid var(--border); background: transparent; color: var(--text);">
+                                <input type="time" id="taskTime" required
+                                    style="width: 100%; padding: 1rem; border: 1px solid var(--border); background: transparent; color: var(--text);">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="taskStatus">Status</label>
-                            <select id="taskStatus" class="form-group" style="width: 100%; padding: 1rem; border: 1px solid var(--border); background: transparent; color: var(--text);">
+                            <select id="taskStatus" class="form-group"
+                                style="width: 100%; padding: 1rem; border: 1px solid var(--border); background: transparent; color: var(--text);">
                                 <option value="Not Started">Not Started</option>
                                 <option value="In Progress">In Progress</option>
                                 <option value="Completed">Completed</option>
@@ -115,12 +123,12 @@
                 </div>
             </div>
         </main>
-</div>
-        <footer class="site-footer">
-            <div class="footer-left">© 2026 Miracle Eze. All Rights Reserved.</div>
-            <div class="footer-right">Designed for COS 106 Term Project.</div>
-        </footer>
-    
+    </div>
+    <footer class="site-footer">
+        <div class="footer-left">© 2026 Miracle Eze. All Rights Reserved.</div>
+        <div class="footer-right">Designed for COS 106 Term Project.</div>
+    </footer>
+
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollTrigger.min.js"></script>

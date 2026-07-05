@@ -674,6 +674,12 @@ img {
 
 }
 
+.cta-section h1 {
+  font-family: 'Clash Display', sans-serif;
+  font-size: 3rem;
+  margin-bottom: -1rem;
+}
+
 /* FOOTER */
 .site-footer {
   /* margin-top: 6rem; */

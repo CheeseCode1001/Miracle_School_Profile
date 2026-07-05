@@ -240,12 +240,13 @@ img {
   display: flex;
   align-items: start;
   justify-content: space-between;
-  font-size: 3rem;
+  font-size: 2rem;
   border-bottom: 1px solid var(--border);
   font-weight: 500;
   color: var(--text);
   width: 100%;
   padding-left: 2.5rem;
+  padding-right: 2.5rem;
   padding-bottom: 1rem;
   text-decoration: none;
   transition: color 0.2s;
@@ -254,6 +255,10 @@ img {
 .mobile-menu a:hover,
 .mobile-menu a.active {
   color: var(--muted);
+}
+
+.mobile-menu a i{
+  font-size: 1rem;
 }
 
 /* HERO */

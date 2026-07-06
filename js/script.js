@@ -1,16 +1,16 @@
 // ============ GSAP & MOTION SETUP ============
 
 function escapeHTML(str) {
-    if (str === null || str === undefined) return '';
-    return String(str).replace(/[&<>'"]/g, function(match) {
-        return {
-            '&': '&amp;',
-            '<': '&lt;',
-            '>': '&gt;',
-            "'": '&#39;',
-            '"': '&quot;'
-        }[match];
-    });
+  if (str === null || str === undefined) return '';
+  return String(str).replace(/[&<>'"]/g, function (match) {
+    return {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      "'": '&#39;',
+      '"': '&quot;'
+    }[match];
+  });
 }
 
 // Wait for all scripts to load
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (typeof lucide !== 'undefined') {
     lucide.createIcons();
   }
-  
+
   initMobileMenu();
   initHeaderScroll();
   initStaggerHeadings();
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initPartnerForm();
   initDonationForm();
   initContactForm();
-  
+
   // Custom added functions
   initThemeSwitcher();
   initPlannerModal();
@@ -234,13 +234,13 @@ function initCounters() {
 }
 
 // ============ FAQ ACCORDION ============
-function initFAQ() {}
-function initDonationAmounts() {}
-function initProjects() {}
-function initPrograms() {}
-function initPartnerForm() {}
-function initDonationForm() {}
-function initGallery() {}
+function initFAQ() { }
+function initDonationAmounts() { }
+function initProjects() { }
+function initPrograms() { }
+function initPartnerForm() { }
+function initDonationForm() { }
+function initGallery() { }
 
 // ============ SMOOTH SCROLL ============
 function initSmoothScroll() {
@@ -286,12 +286,12 @@ function initContactForm() {
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
     let valid = true;
-    
+
     const name = document.getElementById('name');
     const email = document.getElementById('email');
     const phone = document.getElementById('phone');
     const message = document.getElementById('message');
-    
+
     document.querySelectorAll('.error-message').forEach(el => el.style.display = 'none');
 
     if (!name.value.trim()) {
@@ -299,27 +299,27 @@ function initContactForm() {
       document.getElementById('nameError').innerText = 'Name cannot be empty';
       valid = false;
     }
-    
+
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!email.value.trim() || !emailRegex.test(email.value)) {
       document.getElementById('emailError').style.display = 'block';
       document.getElementById('emailError').innerText = 'Please enter a valid email address';
       valid = false;
     }
-    
+
     const phoneRegex = /^\d+$/;
     if (!phone.value.trim() || !phoneRegex.test(phone.value)) {
       document.getElementById('phoneError').style.display = 'block';
       document.getElementById('phoneError').innerText = 'Phone number must contain only digits';
       valid = false;
     }
-    
+
     if (!message.value.trim()) {
       document.getElementById('messageError').style.display = 'block';
       document.getElementById('messageError').innerText = 'Message cannot be empty';
       valid = false;
     }
-    
+
     if (valid) {
       alert('Form submitted successfully!');
       contactForm.reset();
@@ -365,7 +365,27 @@ function initPlannerModal() {
 
   if (!addBtn || !modal || !plannerForm) return;
 
-  let tasks = [];
+  const STORAGE_KEY = 'planner-tasks';
+
+  function loadTasks() {
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      return stored ? JSON.parse(stored) : [];
+    } catch (e) {
+      console.warn('Failed to load tasks from localStorage:', e);
+      return [];
+    }
+  }
+
+  function saveTasks() {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
+    } catch (e) {
+      console.warn('Failed to save tasks to localStorage:', e);
+    }
+  }
+
+  let tasks = loadTasks();
   let editingId = null;
 
   // Render Tasks
@@ -384,22 +404,25 @@ function initPlannerModal() {
       const li = document.createElement('li');
       li.className = 'task-item';
       if (task.status === 'Completed') li.classList.add('completed');
-      
+
       li.innerHTML = `
-        <div class="task-details" style="flex: 1;">
-          <div style="font-weight: 500; font-size: 1.1rem; margin-bottom: 0.4rem;">
+        <div class="task-details" style="display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; flex: 1;">
+          <div style="font-weight: 600;   font-family: "Space Grotesk", sans-serif; font-size: 1.5rem; ">
             ${escapeHTML(task.title)}
-            <span style="font-size: 0.75rem; padding: 0.2rem 0.5rem; background: var(--surface-strong); border-radius: 4px; margin-left: 0.5rem; font-weight: normal;">${escapeHTML(task.status)}</span>
           </div>
-          <div style="font-size: 0.85rem; color: var(--muted); margin-bottom: 0.4rem;">
+          <div style="font-size: 0.85rem; color: var(--text);">
             ${task.date ? `<strong>Date:</strong> ${escapeHTML(task.date)}` : ''} 
             ${task.time ? `&nbsp;&nbsp;<strong>Time:</strong> ${escapeHTML(task.time)}` : ''}
           </div>
-          <div style="font-size: 0.9rem; color: var(--muted);">${escapeHTML(task.description)}</div>
+          <div style="font-size: 0.9rem; color: var(--text);">${escapeHTML(task.description)}</div>
         </div>
-        <div class="task-actions" style="display: flex; gap: 0.5rem;">
-          <button class="edit-btn" data-id="${task.id}" title="Edit"><i data-lucide="edit"></i></button>
-          <button class="delete-btn" data-id="${task.id}" title="Delete"><i data-lucide="trash-2"></i></button>
+        <div style="display: flex; flex-direction: column; gap: 1rem; align-items: flex-end; justify-content: space-between;">
+          <span style="font-size: 0.75rem; padding: 0.2rem 0.5rem; color: var(--surface); background: var(--muted); margin-left: 0.5rem; font-weight: normal;">${escapeHTML(task.status)}</span>
+
+          <div class="task-actions" style="display: flex; gap: 0.5rem;">
+            <button class="edit-btn" data-id="${task.id}" title="Edit"><i data-lucide="edit"></i></button>
+            <button class="delete-btn" data-id="${task.id}" title="Delete"><i data-lucide="trash-2"></i></button>
+        </div>
         </div>
       `;
       taskList.appendChild(li);
@@ -419,6 +442,7 @@ function initPlannerModal() {
       btn.addEventListener('click', (e) => {
         const id = Number(e.currentTarget.getAttribute('data-id'));
         tasks = tasks.filter(t => t.id !== id);
+        saveTasks();
         renderTasks();
       });
     });
@@ -427,28 +451,28 @@ function initPlannerModal() {
   function openEditModal(id) {
     const task = tasks.find(t => t.id === id);
     if (!task) return;
-    
+
     editingId = id;
-    if(modalTitle) modalTitle.textContent = 'Edit Activity';
-    
+    if (modalTitle) modalTitle.textContent = 'Edit Activity';
+
     const taskTitleInput = document.getElementById('taskTitle');
     const taskDescInput = document.getElementById('taskDesc');
     const taskDateInput = document.getElementById('taskDate');
     const taskTimeInput = document.getElementById('taskTime');
     const taskStatusInput = document.getElementById('taskStatus');
 
-    if(taskTitleInput) taskTitleInput.value = task.title;
-    if(taskDescInput) taskDescInput.value = task.description;
-    if(taskDateInput) taskDateInput.value = task.date;
-    if(taskTimeInput) taskTimeInput.value = task.time;
-    if(taskStatusInput) taskStatusInput.value = task.status;
-    
+    if (taskTitleInput) taskTitleInput.value = task.title;
+    if (taskDescInput) taskDescInput.value = task.description;
+    if (taskDateInput) taskDateInput.value = task.date;
+    if (taskTimeInput) taskTimeInput.value = task.time;
+    if (taskStatusInput) taskStatusInput.value = task.status;
+
     modal.classList.add('active');
   }
 
   addBtn.addEventListener('click', () => {
     editingId = null;
-    if(modalTitle) modalTitle.textContent = 'Add New Activity';
+    if (modalTitle) modalTitle.textContent = 'Add New Activity';
     plannerForm.reset();
     modal.classList.add('active');
   });
@@ -463,7 +487,7 @@ function initPlannerModal() {
 
   plannerForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    
+
     const taskTitleInput = document.getElementById('taskTitle');
     const taskDescInput = document.getElementById('taskDesc');
     const taskDateInput = document.getElementById('taskDate');
@@ -475,7 +499,7 @@ function initPlannerModal() {
     const date = taskDateInput ? taskDateInput.value : '';
     const time = taskTimeInput ? taskTimeInput.value : '';
     const status = taskStatusInput ? taskStatusInput.value : 'Not Started';
-    
+
     if (title) {
       if (editingId !== null) {
         // Update existing
@@ -487,6 +511,7 @@ function initPlannerModal() {
           task.time = time;
           task.status = status;
         }
+        saveTasks();
       } else {
         // Create new
         tasks.push({
@@ -497,8 +522,9 @@ function initPlannerModal() {
           time,
           status
         });
+        saveTasks();
       }
-      
+
       plannerForm.reset();
       modal.classList.remove('active');
       renderTasks();

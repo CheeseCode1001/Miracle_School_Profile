@@ -7,6 +7,8 @@
   --muted: #666666;
   --border: #dddddd;
   --accent: #111111;
+  --warning: #ffee00;
+  --danger: #ec001c;
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
@@ -200,7 +202,7 @@ img {
   justify-content: space-between;
   font-size: 2.2rem;
   border-bottom: 1px solid var(--border);
-  font-weight: 700;
+  font-weight: 500;
   color: var(--text);
   width: 100%;
   padding-left: 2.5rem;
@@ -402,6 +404,7 @@ img {
   width: 100%;
   padding: 1rem;
   background: transparent;
+  border-radius: none;
   border: 1px solid var(--border);
   color: var(--text);
   font-family: inherit;
@@ -520,13 +523,14 @@ img {
 .task-item {
   display: flex;
   justify-content: space-between;
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--border);
+  padding: 1.5rem 2rem;
+  border: 1px dashed var(--border);
   align-items: center;
 }
 
 .task-text {
   font-weight: 600;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 1.1rem;
   cursor: pointer;
   transition: color 0.2s;
@@ -539,13 +543,28 @@ img {
 
 .task-actions button {
   margin-left: 0.5rem;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem;
   background: transparent;
   border: 1px solid var(--border);
   color: var(--text);
   cursor: pointer;
-  font-size: 0.8rem;
-  font-weight: 600;
+  font-size: 0.4rem;
+  font-weight: 400;
+}
+
+.task-actions button i {
+  font-weight: 400;
+  font-size: 0.4rem;
+}
+
+.task-actions .edit-btn {
+  border-color: var(--warning);
+  color: var(--warning);
+}
+
+.task-actions .delete-btn {
+  border-color: var(--danger);
+  color: var(--danger);
 }
 
 .task-actions button:hover {
@@ -569,7 +588,6 @@ img {
   min-height: 250px;
   background-size: cover;
   background-position: center;
-  border-radius: 4px;
 }
 
 .about-category {
@@ -622,7 +640,6 @@ img {
   min-height: 150px;
   background-size: cover;
   background-position: center;
-  border-radius: 4px;
 }
 
 .cta-section {
